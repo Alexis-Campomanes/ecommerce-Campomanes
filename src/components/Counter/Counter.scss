@@ -1,0 +1,59 @@
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 20pt;
+    .counter-conteiner{
+      display: flex;
+      margin-left: 1rem;
+      box-shadow: 5px 5px 5px #888888;
+      border-radius: 10px;
+      
+      :nth-child(1){
+        background-color: #034ef7;
+        color: white;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        cursor: pointer;
+      }
+      :nth-child(2){
+        border: 2px solid #034ef7;
+        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      :nth-child(3){
+        background-color: #034ef7;
+        color: white;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+      }
+      
+    }
+    button{
+      margin-top:4rem;
+      padding: 0.8rem 2rem;
+      border-radius:10px;
+      border:none;
+      background:#034ef7;
+      color: white;
+      font-weight:bold;
+      box-shadow: 5px 5px 5px #888888;
+      margin-right: 2rem;
+      &:hover{
+          transform: scale(1.1);
+          cursor: pointer;
+      }  
+  }
+}

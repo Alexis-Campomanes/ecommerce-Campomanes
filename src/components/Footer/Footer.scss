@@ -1,0 +1,76 @@
+.footer{
+    background-color: #034ef7;
+    color: white;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    :nth-child(1),
+    :nth-child(5){
+        font-size: 17pt;
+        font-family:monospace ;
+        
+    }
+    :nth-child(3),
+    :nth-child(7){
+        font-family: monospace;
+        font-size: small;
+        letter-spacing: 2px;
+    }
+    :nth-child(4){
+        width: 10rem;
+    }
+    .redes img {
+        width: 2rem;
+        padding-right: 0.8rem;
+    }
+    .footer-email{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        input{
+            padding: 0.8rem;
+            width: 350px;
+            border-radius: 20px;
+            border: none;
+            &:focus{
+                outline: none;
+            }
+        }
+        button{
+        padding: 0.8rem 2rem;
+        border-radius:10px;
+        border:none;
+        background: black;
+        color: white;
+        font-weight:bold;
+        margin-right: 2rem;
+        &:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+      }  
+        }
+    }
+}
+
+
+@media screen and (max-width:768px) {
+  .footer{
+    .footer-email{
+      display: flex;
+      align-items: stretch;
+      gap: 0.8rem;
+      input{
+        width:155px;
+        &::placeholder{
+          font-size: 11pt;
+        }
+      }
+      button{
+        padding: 0.8rem;
+      }
+    }
+  }
+}
