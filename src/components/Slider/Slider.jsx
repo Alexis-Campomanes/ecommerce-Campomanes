@@ -25,6 +25,7 @@ const Slider = () => {
             setSelected(Selected - 1)
         }
       }
+      
 
     return(
         <div className='arrow'>
@@ -50,7 +51,8 @@ const Slider = () => {
             <ArrowRightOutlined style={{fontSize:'50px'}} onClick = {nextSlide}/>
           </div> 
         </div>
-        )};
+        )
+};
       
       export default Slider
       

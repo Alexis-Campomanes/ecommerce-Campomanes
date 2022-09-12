@@ -1,8 +1,19 @@
 import React from 'react'
 import Counter from '../Counter/Counter';
-import './ItemDetail.scss'
+import './ItemDetail.scss';
+import { useState } from 'react';
 
 const ItemDetail = ({item}) => {
+
+  const [cantidad, setCantidad] = useState(1);
+
+  const handleAdd = () => {
+    console.log({
+      ...item,
+      cantidad
+    })
+  }
+
   return (
     <div className='products-conteiner'>
       <div className='products-left'>
@@ -33,7 +44,12 @@ const ItemDetail = ({item}) => {
               <span style={{fontSize:'20pt', fontWeight:'bold'}}>{item.stock}</span>
               {/* contador */}
             </div>
-              <Counter stock={item.stock}  /*addToCart={addToCart}*//>
+              <Counter 
+              stock={item.stock} 
+              contador = {cantidad}
+              setContador = {setCantidad}
+              handleAdd = {handleAdd}
+              />
           </div>
     </div>
   )

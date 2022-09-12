@@ -1,13 +1,14 @@
 import React from 'react';
 import './Counter.scss'
-import { useState } from 'react';
+
 import { KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
-const Counter = ({stock}) => {
-  const [contador, setContador] = useState(0);
+const Counter = ({stock, contador, setContador, handleAdd}) => {
+
+
   
   const handleResta = () => {
-    if (contador > 0){
+    if (contador > 1){
         setContador(contador - 1)
     }
   }
@@ -36,7 +37,7 @@ const Counter = ({stock}) => {
             </div>
         </div>
         <div className='button-conteiner'>
-          <button disabled={stock<=0}>Add to Car</button>
+          <button onClick={handleAdd}>Add to Car</button>
         </div>
       </div>
     
