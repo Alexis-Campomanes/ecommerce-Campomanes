@@ -3,20 +3,20 @@ import './Cart.scss';
 import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react';
 import { Close } from '@material-ui/icons';
-import { ListItemIcon } from '@material-ui/core';
+
 
 
 
 const Cart = () => {
 
-  const { cart } = useContext(CartContext)
+  const { cart, cartTotal, emptyCart } = useContext(CartContext)
 
   return (
     <div>
         <div className="cart">
           <div style={{fontSize:'30pt'}}>Cart</div>
           <div className='cart-button'>
-            <button>Continue Shopping</button>
+            <button onClick={emptyCart}>Empty cart</button>
             <div className='cart-shopping'>
               <span>Items in your cart :3 </span>
               <span>Whitlist Item: 0</span>
@@ -86,7 +86,7 @@ const Cart = () => {
                       </di>
                       <div className='s-total'>
                         <span>Total</span>
-                        <span>total</span>
+                        <span>${cartTotal()}</span>
                       </div>
                   </div>
                 </div>
