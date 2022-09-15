@@ -1,18 +1,26 @@
 import React from 'react'
 import Counter from '../Counter/Counter';
 import './ItemDetail.scss';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../CartContext/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({item}) => {
+
+  const { cart, addToCart, isInCart } = useContext(CartContext)
+  console.log(cart)
 
   const [cantidad, setCantidad] = useState(1);
 
   const handleAdd = () => {
-    console.log({
-      ...item,
+    const itemToCart ={
+        ...item,
       cantidad
-    })
+    }
+    isInCart(item.id)
+    addToCart(itemToCart)
   }
+
 
   return (
     <div className='products-conteiner'>
@@ -44,13 +52,21 @@ const ItemDetail = ({item}) => {
               <span style={{fontSize:'20pt', fontWeight:'bold'}}>{item.stock}</span>
               {/* contador */}
             </div>
-              <Counter 
-              stock={item.stock} 
-              contador = {cantidad}
-              setContador = {setCantidad}
-              handleAdd = {handleAdd}
-              />
-          </div>
+
+            {isInCart(item.id)  && <p>item was added to the cart</p>}
+            {
+                isInCart(item.id)
+                ?<Link to='/cart'>
+                  <button className='button' >Finish</button>
+                </Link>
+                :<Counter 
+                    stock={item.stock} 
+                    contador = {cantidad}
+                    setContador = {setCantidad}
+                    handleAdd = {handleAdd}
+                />
+            }
+      </div>
     </div>
   )
 }

@@ -33,6 +33,21 @@
             font-weight: 400;
             padding-bottom: 2em;
         }
+        .button{
+          margin-top:2rem;
+          padding: 0.8rem 3rem;
+          border-radius:10px;
+          border:none;
+          background:#034ef7;
+          color: white;
+          font-weight:bold;
+          box-shadow: 5px 5px 5px #888888;
+          margin-right: 2rem;
+          &:hover{
+              transform: scale(1.1);
+              cursor: pointer;
+          }  
+      }
     }
 }
 
