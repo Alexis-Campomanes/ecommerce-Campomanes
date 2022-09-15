@@ -5,8 +5,6 @@ import { useContext } from 'react';
 import { Close } from '@material-ui/icons';
 
 
-
-
 const Cart = () => {
 
   const { cart, cartTotal, emptyCart } = useContext(CartContext)
