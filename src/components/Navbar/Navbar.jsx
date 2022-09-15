@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.scss'
 import Logo from '../../Assets/astro.png'
 import { Search, ShoppingCartOutlined } from '@material-ui/icons'
 import { Badge } from '@material-ui/core'
 import { Link, Outlet } from 'react-router-dom'
+import { CartContext } from '../CartContext/CartContext'
 
 const Navbar = () => {
+
+  const { cartQuantity } = useContext(CartContext)
+
     return (
         <div className='navbar-conteiner'>
         <div className='navbar'>
@@ -30,9 +34,11 @@ const Navbar = () => {
               <nav className="right-n">
                 <Link to = 'register'>Register</Link>
                 <Link to = 'sign in'>Sign In</Link>
-                <Badge overlap='rectangular' badgeContent={2} color='primary'>
-                  <ShoppingCartOutlined/>
-                </Badge>
+                <Link to='/cart'>
+                  <Badge overlap='rectangular' badgeContent={cartQuantity()} color='primary'>
+                    <ShoppingCartOutlined/>
+                  </Badge>
+                </Link>
               </nav>
             </div> 
           <section>
