@@ -33,6 +33,15 @@ function App() {
     return setCart([])
   }
 
+  const itemIgv = () => {
+    return cart.reduce((acc, item)=> acc + item.cantidad * item.price * 18/100, 0)
+  }
+
+  const subTotal = () => {
+    return cartTotal() - itemIgv()
+  }
+
+
   return (
   <CartContext.Provider value={{
     cart,
@@ -40,7 +49,10 @@ function App() {
     isInCart,
     cartQuantity,
     cartTotal,
-    emptyCart
+    emptyCart,
+    itemIgv,
+    subTotal,
+ 
   }}>
 
     <BrowserRouter>

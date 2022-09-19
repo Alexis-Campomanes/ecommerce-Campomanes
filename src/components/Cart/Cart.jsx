@@ -7,7 +7,7 @@ import { Close } from '@material-ui/icons';
 
 const Cart = () => {
 
-  const { cart, cartTotal, emptyCart } = useContext(CartContext)
+  const { cart, cartTotal, emptyCart, cartQuantity, itemIgv, subTotal } = useContext(CartContext)
 
   return (
     <div>
@@ -15,9 +15,8 @@ const Cart = () => {
           <div style={{fontSize:'30pt'}}>Cart</div>
           <div className='cart-button'>
             <button onClick={emptyCart}>Empty cart</button>
-            <div className='cart-shopping'>
-              <span>Items in your cart :3 </span>
-              <span>Whitlist Item: 0</span>
+            <div className='cart-shopping'> 
+              <span>Items in your cart : {cartQuantity()} </span>
             </div>
             <button>Checkout</button>
           </div>
@@ -68,7 +67,7 @@ const Cart = () => {
                               <span>x{item.cantidad}</span>
                             </div>
                             <div>
-                              aqui va el total
+                              $ 0.00
                             </div>
                           </div>
                       ))}
@@ -76,14 +75,14 @@ const Cart = () => {
                   <div className='total'>
                       <div className='s-total'>
                         <span>Sub-Total</span>
-                        <span>total</span>
+                        <span>${subTotal()}</span>
                       </div>
                       <di className='s-total'>
                         <span>IGV</span>
-                        <span>total</span>
+                        <span>${itemIgv()}</span>
                       </di>
                       <div className='s-total'>
-                        <span>Total</span>
+                        <span>total</span>
                         <span>${cartTotal()}</span>
                       </div>
                   </div>
