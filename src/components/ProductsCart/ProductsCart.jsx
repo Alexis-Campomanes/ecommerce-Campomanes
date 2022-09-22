@@ -1,10 +1,10 @@
 import React from 'react';
 import {useParams}  from 'react-router';
-import { getData } from '../../Data/getData';
 import { useEffect, useState } from 'react';
 import { Box, CircularProgress } from '@material-ui/core';
 import ItemDetail from '../ItemDetail/ItemDetail';
-
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 
 function ProductsCart() {
@@ -14,15 +14,14 @@ function ProductsCart() {
   const {itemId} = useParams(); 
 
   useEffect(() => {
-    setProgress(true)
-    getData()
-    .then((res)=>{
-      setItem(res.find((prod)=> prod.id === Number(itemId)))
-    })
-    .catch(err => console.log(err))
-    .finally(()=> {
-      setProgress(false)
-    })
+    const docRef = doc(db, 'productos', itemId)
+    getDoc(docRef)
+      .then((doc) =>{
+        setItem({id: doc.id, ...doc.data()})
+      })
+      .finally(() => {
+        setProgress(false)
+      })
   }, [itemId]);
 
   return (

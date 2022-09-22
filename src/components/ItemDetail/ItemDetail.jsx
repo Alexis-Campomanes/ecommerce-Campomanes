@@ -14,8 +14,13 @@ const ItemDetail = ({item}) => {
 
   const handleAdd = () => {
     const itemToCart ={
-        ...item,
-      cantidad
+      id: item.id,
+      price: item.price,
+      name: item.name,
+      cantidad: item.cantidad,
+      brands: item.brands,
+      categoty: item.category,
+      image: item.image
     }
     isInCart(item.id)
     addToCart(itemToCart)

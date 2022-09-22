@@ -9,7 +9,7 @@ export const productsData = {
                 id    :  123475,
                 stock :  15,
                 price :  25,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequita, quibusdam nesciunt'
             },
             {   
                 name  : 'Sanda F-601S',
@@ -19,7 +19,7 @@ export const productsData = {
                 id    : 1598,
                 stock : 1,
                 price :  75,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab , quibusdam nesciunt.'
             },
             {    
                 name  : 'MiniFocus Ga-20wn',
@@ -39,7 +39,7 @@ export const productsData = {
                 id    : 75356,
                 stock : 12,
                 price : 45,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, quibusdam nesciunt'
             },
             {
                 name  : 'Jin Xin F-841',
@@ -49,7 +49,7 @@ export const productsData = {
                 id    : 741586,
                 stock : 41,
                 price : 55,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam aliasxercitationem. Soluta, quibusdam nesciunt'
             },
             {   
                 name  : 'MiniFocus T-7452',
@@ -59,7 +59,7 @@ export const productsData = {
                 id    : 456785,
                 stock : 2,
                 price : 125,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis dolionem. Soluta, quibusdam nesciunt.'
             },
             {   
                 name  : 'Apple-Watch',
@@ -69,7 +69,7 @@ export const productsData = {
                 id    : 745698,
                 stock : 3,
                 price : 325,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribusilique amet exercitationem. Soluta, quibusdam nesciunt.'
             },
             {  
                 name  : 'Curden - SUP3P1',
@@ -79,7 +79,7 @@ export const productsData = {
                 id    : 54656,
                 stock : 2,
                 price : 425,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi amilique amet exercitationem. Soluta, quibusdam nesciunt.'
             },
             {
                 name  : 'Smael - 1376',
@@ -89,7 +89,7 @@ export const productsData = {
                 id    : 785236,
                 stock : 10,
                 price : 10,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea seqderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
             },
             {
                 name  : 'Iphone - 13',
@@ -99,7 +99,7 @@ export const productsData = {
                 id    : 159753,
                 stock : 4,
                 price : 325,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perf Soluta, quibusdam nesciunt.'
             },
             {   
                 name  : 'Rayband',
@@ -109,7 +109,7 @@ export const productsData = {
                 id    : 419674,
                 stock : 5,
                 price : 725,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, enderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
             },
             {   
                 name  : 'AirPods',
@@ -119,7 +119,7 @@ export const productsData = {
                 id    : 528574,
                 stock : 15,
                 price : 150,
-                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat adipisci, totam alias maiores ab ea sequi autem quos perferendis doloribus in laboriosam, reprehenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisichenderit dignissimos similique amet exercitationem. Soluta, quibusdam nesciunt.'
             }
         ]
     }

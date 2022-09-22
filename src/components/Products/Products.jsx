@@ -3,8 +3,9 @@ import ProductsItem from './ProductsItem';
 import { useEffect, useState } from 'react';
 import { Box, CircularProgress } from '@material-ui/core';
 import '../Products/Products.scss'
-import { getData } from '../../Data/getData';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase/config'
 
 const Products = () => {
 
@@ -19,21 +20,19 @@ const Products = () => {
 
       setProgress (true)
 
-        getData()
-            .then ((res) => {
-              if(!categoryId){
-                setProductos(res)
-              }else{
-                setProductos(res.filter((prod) => prod.category === categoryId))
-              }
-              
-            })
-            .catch(error => {
-              console.log(error)
-            })
-            .finally (()=> {
-              setProgress(false)
-            })
+      const productRef = collection(db, 'productos')
+
+      getDocs(productRef)
+        .then((resp) => {
+          const productoDB = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+          
+          setProductos(productoDB)
+        })
+        .finally(() => {
+          setProgress(false)
+        })
+
+
     }, [categoryId]);
 
     return (
