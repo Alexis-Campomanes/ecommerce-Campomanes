@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Box, CircularProgress } from '@material-ui/core';
 import '../Products/Products.scss'
 import { useParams } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs,query, where } from 'firebase/firestore';
 import { db } from '../../firebase/config'
 
 const Products = () => {
@@ -21,8 +21,11 @@ const Products = () => {
       setProgress (true)
 
       const productRef = collection(db, 'productos')
+      const q = categoryId
+                  ? query(productRef, where('category', '==', categoryId))
+                  : productRef
 
-      getDocs(productRef)
+      getDocs(q)
         .then((resp) => {
           const productoDB = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
           
