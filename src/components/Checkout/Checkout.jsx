@@ -56,6 +56,7 @@ const Checkout = () => {
                   placeholder='xxx@email.com' />
               <input
                   name='addres'
+                  onChange={handleInputChange}
                   values={values.addres}
                   type="text" 
                   placeholder='Address' />
