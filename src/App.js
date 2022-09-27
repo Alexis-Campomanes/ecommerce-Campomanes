@@ -6,7 +6,8 @@ import Products from './components/Products/Products';
 import ProductsCart from './components/ProductsCart/ProductsCart';
 import { CartContext } from './components/CartContext/CartContext';
 import { useState } from 'react';
-import Cart from '../src/components/Cart/Cart'
+import Cart from '../src/components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
                 <Route path='/product/:categoryId' element = {<Products/>} />
                 <Route path='/item/:itemId' element = {<ProductsCart />} />
                 <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout' element={<Checkout />} />
                 <Route path='*' element ={<Navigate to = '/' />} />
 
             </Route>

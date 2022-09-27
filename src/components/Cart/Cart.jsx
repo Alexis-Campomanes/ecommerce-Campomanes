@@ -3,6 +3,7 @@ import './Cart.scss';
 import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react';
 import { Close } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -18,7 +19,10 @@ const Cart = () => {
             <div className='cart-shopping'> 
               <span>Items in your cart : {cartQuantity()} </span>
             </div>
-            <button>Checkout</button>
+            <Link to='/checkout'>
+              <button>Checkout</button>
+            </Link>
+            
           </div>
         </div>
         {/* central div */}

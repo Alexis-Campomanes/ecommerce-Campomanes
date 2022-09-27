@@ -1,0 +1,12 @@
+.Checkout{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.Checkout>form{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    width: 350px;
+}
