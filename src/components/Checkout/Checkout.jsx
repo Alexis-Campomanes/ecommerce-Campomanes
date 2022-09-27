@@ -4,25 +4,37 @@ import { useState } from 'react';
 
 const Checkout = () => {
 
-  const [nombre, setNombre] = useState('');
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    addres: '',
+  });
   
-
-  const handleNombre = (e) => {
-    setNombre(e.target.value)
+  const handleInputChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value
+    })
   }
 
   const handleSubmit =(e) => {
     e.preventDefault()
 
     const orden = {
-      comprador: {
-        name: nombre,
-        addres: 'afc',
-        email: '111@123.com'
-      }
+      comprador: values
     }
     console.log('submit del form')
     console.log(orden)
+
+    if(values.name.length < 3) {
+      alert('Incorrect name')
+      return
+    }
+
+    if(values.email.length < 2) {
+      alert('Email incorrect')
+      return
+    }
   }
 
     return (
@@ -31,14 +43,20 @@ const Checkout = () => {
             <br />
             <form onSubmit={handleSubmit}>
               <input
-                  value={nombre}
-                  onChange={handleNombre}
+                  name='name'
+                  onChange={handleInputChange}
+                  value={values.nombre}
                   type="text" 
                   placeholder='Name' />
-              <input 
+              <input
+                  name='email'
+                  onChange={handleInputChange}
+                  values={values.email}
                   type="email" 
                   placeholder='xxx@email.com' />
-              <input 
+              <input
+                  name='addres'
+                  values={values.addres}
                   type="text" 
                   placeholder='Address' />
               <button type='submit'>Payment</button>
