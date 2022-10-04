@@ -35,14 +35,15 @@ const Cart = () => {
                   </div>
                   <div className="description">
                     <p> 
-                      <b>ID:</b>{item.id}
+                      <b>ID:</b> {item.id}
                     </p>
                     <p> 
                       <b>Category:</b> {item.category}
                     </p>
                     <p> 
                       <b>Brands:</b> {item.brands}
-                    </p><p> 
+                    </p>
+                    <p> 
                       <b>Amount:</b> {item.cantidad}
                     </p>
                   </div>
@@ -71,7 +72,7 @@ const Cart = () => {
                               <span>x{item.cantidad}</span>
                             </div>
                             <div>
-                              $ 0.00
+                              $ {item.price}
                             </div>
                           </div>
                       ))}
@@ -81,10 +82,10 @@ const Cart = () => {
                         <span>Sub-Total</span>
                         <span>${subTotal()}</span>
                       </div>
-                      <di className='s-total'>
+                      <div className='s-total'>
                         <span>IGV</span>
                         <span>${itemIgv()}</span>
-                      </di>
+                      </div>
                       <div className='s-total'>
                         <span>total</span>
                         <span>${cartTotal()}</span>

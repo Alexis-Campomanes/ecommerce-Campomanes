@@ -2,7 +2,9 @@ import React from 'react';
 import './Checkout.scss';
 import { useState } from 'react';
 
+
 const Checkout = () => {
+
 
   const [values, setValues] = useState({
     name: '',
@@ -21,7 +23,7 @@ const Checkout = () => {
     e.preventDefault()
 
     const orden = {
-      comprador: values
+      comprador: values,
     }
     console.log('submit del form')
     console.log(orden)

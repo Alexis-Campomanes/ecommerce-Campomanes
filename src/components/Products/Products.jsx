@@ -43,8 +43,8 @@ const Products = () => {
         { progress
         ? <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
           <CircularProgress />
-        </Box>
-        :<>
+          </Box>
+        :<div>
         <h2>Products</h2>
         <div className='products-data'>
             {/* mapeo del producto  para catalogo*/}
@@ -54,7 +54,7 @@ const Products = () => {
                 ))
             }
         </div>
-        </> 
+        </div> 
         }
       </>
     )    

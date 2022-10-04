@@ -1,12 +1,12 @@
 import React from 'react';
-import './Counter.scss'
+import './Counter.scss';
+
 
 import { KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
 const Counter = ({stock, contador, setContador, handleAdd}) => {
 
 
-  
   const handleResta = () => {
     if (contador > 1){
         setContador(contador - 1)

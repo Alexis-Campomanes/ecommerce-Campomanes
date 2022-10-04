@@ -12,20 +12,21 @@ const ItemDetail = ({item}) => {
 
   const [cantidad, setCantidad] = useState(1);
 
+
   const handleAdd = () => {
-    const itemToCart ={
+    const itemToCart = {
       id: item.id,
       price: item.price,
       name: item.name,
-      cantidad: item.cantidad,
       brands: item.brands,
-      categoty: item.category,
-      image: item.image
+      category: item.category,
+      image: item.image,
+      stock: item.stock,
+      cantidad: cantidad
     }
     isInCart(item.id)
     addToCart(itemToCart)
   }
-
 
   return (
     <div className='products-conteiner'>
@@ -57,18 +58,18 @@ const ItemDetail = ({item}) => {
               <span style={{fontSize:'20pt', fontWeight:'bold'}}>{item.stock}</span>
               {/* contador */}
             </div>
-
             {isInCart(item.id)  && <p>item was added to the cart</p>}
             {
                 isInCart(item.id)
                 ?<Link to='/cart'>
-                  <button className='button' >Finish</button>
+                  <button className='button'>Finish</button>
                 </Link>
-                :<Counter 
+                :<Counter
                     stock={item.stock} 
                     contador = {cantidad}
                     setContador = {setCantidad}
                     handleAdd = {handleAdd}
+                  
                 />
             }
       </div>

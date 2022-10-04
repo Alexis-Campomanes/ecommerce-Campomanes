@@ -16,14 +16,14 @@ function App() {
 
   const addToCart = (item) => {
     setCart([...cart, item])
-  }
+  };
 
   const isInCart = (id) => {
     return cart.find(item => item.id === id)
   }
 
   const cartQuantity = () =>{
-    return cart.reduce((acc, item) => acc + item.cantidad, 0)
+    return cart.reduce((acc, item) => acc + item.cantidad, 0).toString()
   }
 
   const cartTotal = () => {
@@ -53,7 +53,6 @@ function App() {
     emptyCart,
     itemIgv,
     subTotal,
- 
   }}>
 
     <BrowserRouter>
