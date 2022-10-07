@@ -1,0 +1,32 @@
+.products-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 20px;
+
+    .p-top{
+        display: flex;
+        img{
+            max-width: 300px;
+        }
+        .i-favorite{
+            img{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .i-shopping{
+        position: absolute;
+        top: 19rem;
+        background: var(--main-color);
+        border-radius: 100%;
+    }
+
+}
