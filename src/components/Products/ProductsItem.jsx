@@ -31,7 +31,6 @@ const ProductsItem = ({product}) => {
                         ?NotLike
                         :Like
                         } alt="favorite" />
-              
               }
             </div>
       </div>

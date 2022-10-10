@@ -8,6 +8,8 @@ import { CartContext } from './components/CartContext/CartContext';
 import { useState } from 'react';
 import Cart from '../src/components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import Login from '../../ecommerce2/src/complements/Login';
+import Register from './complements/Register';
 
 
 function App() {
@@ -65,6 +67,8 @@ function App() {
                 <Route path='/item/:itemId' element = {<ProductsCart />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout />} />
+                <Route path= '/login' element= {<Login />} />
+                <Route path= '/register' element= {<Register />} />
                 <Route path='*' element ={<Navigate to = '/' />} />
 
             </Route>
