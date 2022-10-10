@@ -5,7 +5,7 @@ import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Link, Outlet } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
-import Avatar from '@mui/material/Avatar';
+import { Avatar } from '@mui/material';
 
 
 
@@ -39,7 +39,7 @@ const Navbar = () => {
               </nav>
               
               <nav className="right-n">
-              { usuario ? <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+              { usuario ? <Avatar>H</Avatar>
                         : <Link to = '/login'>Sign In</Link>
               }
                 
