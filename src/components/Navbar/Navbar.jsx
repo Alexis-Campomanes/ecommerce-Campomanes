@@ -5,15 +5,26 @@ import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Link, Outlet } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
-import { Avatar } from '@mui/material';
+import { Avatar} from '@mui/material';
+import app from '../../firebase/config';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
-
+const auth = getAuth(app);
 
 
 const Navbar = () => {
 
   const [usuario, setUsuario] = useState(null);
+
+  onAuthStateChanged(auth, (userFirebase) => {
+    if(userFirebase){
+      setUsuario(userFirebase)
+    }
+    else{
+      setUsuario(null)
+    }
+  })
 
   const { cartQuantity } = useContext(CartContext)
 
@@ -39,7 +50,7 @@ const Navbar = () => {
               </nav>
               
               <nav className="right-n">
-              { usuario ? <Avatar>H</Avatar>
+              { usuario ? <Avatar src="/broken-image.jpg" />
                         : <Link to = '/login'>Sign In</Link>
               }
                 
