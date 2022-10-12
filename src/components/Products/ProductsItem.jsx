@@ -18,7 +18,6 @@ const ProductsItem = ({product}) => {
     setFavorite(!favorite)
   }
 
-  console.log(favorite)
 
   return (
   

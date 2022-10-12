@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import './Navbar.scss';
 import Logo from '../../Assets/astro.png';
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { ShoppingCartOutlined } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Link, Outlet } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
-import { Avatar} from '@mui/material';
+import Online from '../../components/Online/Online'
 import app from '../../firebase/config';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
@@ -15,7 +15,13 @@ const auth = getAuth(app);
 
 const Navbar = () => {
 
+
+
   const [usuario, setUsuario] = useState(null);
+
+  
+
+
 
   onAuthStateChanged(auth, (userFirebase) => {
     if(userFirebase){
@@ -24,7 +30,7 @@ const Navbar = () => {
     else{
       setUsuario(null)
     }
-  })
+  });
 
   const { cartQuantity } = useContext(CartContext)
 
@@ -34,10 +40,6 @@ const Navbar = () => {
           <div className='left-n'>
             <div>
               <img src={Logo} alt="" />
-            </div>
-            <div className='search'>
-              <input type="text" />
-            <Search/>
             </div>
           </div>
             
@@ -50,7 +52,7 @@ const Navbar = () => {
               </nav>
               
               <nav className="right-n">
-              { usuario ? <Avatar src="/broken-image.jpg" />
+              { usuario ? <Online correoUsuario={usuario.email} />
                         : <Link to = '/login'>Sign In</Link>
               }
                 

@@ -39,7 +39,7 @@ const Products = () => {
     }, [categoryId]);
 
     return (
-      <>
+      <div className='products'>
         { progress
         ? <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
           <CircularProgress />
@@ -56,7 +56,7 @@ const Products = () => {
         </div>
         </div> 
         }
-      </>
+      </div>
     )    
 }
     

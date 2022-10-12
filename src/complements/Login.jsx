@@ -1,45 +1,94 @@
 import React from 'react';
 import '../complements/Login.scss';
-import { Formik, Field, Form } from 'formik';
-import { Link } from 'react-router-dom';
+import { Formik, Field, Form, ErrorMessage} from 'formik';
+import * as Yup from 'yup'
+import { useState } from 'react';
+import app from '../../src/firebase/config';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+
+
+const loginSchema = Yup.object().shape(
+  {
+    email: Yup.string()
+              .email('Invalid email format')
+              .required('Email is require'),
+    password: Yup.string()
+                .required('Password is require')
+  }
+) 
+
+const auth = getAuth (app)
 
 
 const Login = () => {
 
+  const initialCredentials = {
+    email: '',
+    password: ''
+  }
+
+  const [registro, setRegistro] = useState(false);
+
+  const handleSubmit = 
+    async(e) => {
+      e.preventDefault();
+      await new Promise ((resolve, reject) => {
+        const correo = e.target.email.value
+        const contraseña = e.target.password.value
+        if(registro){
+          resolve (createUserWithEmailAndPassword(auth, correo, contraseña))
+        }else{
+          reject (signInWithEmailAndPassword(auth, correo, contraseña))
+        }
+      })
+    }
+
   return (
     <div className='login'>
-      <div className="l-conteiner">
-        <span>Welcome!</span>
+        {
+          <span>{registro?'Sign up':'Welcome!'}</span>
+        }
         <Formik
-        initialValues = {{
-        email: '',
-        password: ''
-        }}
-        
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-          }}
-      
+          // *** Initial values
+          initialValues = {initialCredentials}
+          // *** Yup validation Schema
+          validationSchema = { loginSchema }
+          // *** onSubmit event
         >
-          <Form>
-            <label htmlFor="email">Email</label>
-            <Field  id='email'
+
+        {({ errors, touched }) => (
+          <Form className='l-form' onSubmit={handleSubmit}>
+                <label htmlFor="email">Email</label>
+                <Field  id='email'
                     name='email'
                     type= 'email'
                     placeholder='Enter your email'
-            />
-            <label htmlFor="password">Password</label>
-            <Field  id='password'
-                    name='password'
-                    type='password'
-                    placeholder='Enter your email'
-            />
-            <button type='submit'>Sign in</button>
-          </Form>
+                />
+                {
+                  errors.email && touched.email && (
+                    <ErrorMessage name="email" />
+                  )
+                }
+                <label htmlFor="password">Password</label>
+                <Field  id='password'
+                        name='password'
+                        type='password'
+                        placeholder='Enter your email'
+                />
+                {
+                  errors.password && touched.password && (
+                    <ErrorMessage name="password" />
+                  )
+                }
+                <button type='submit'>
+                  {registro ? 'Sign up' : 'Login'}
+                </button>
+                <button className='btn' onClick={() => setRegistro(!registro)}>
+                    {registro? 'Login': 'Sign up' }
+                </button>
+              </Form>
+        )}
         </Formik>
-        <span>If you do not have an account, register <Link to = '/register'>here</Link></span>
-    </div>
   </div>
   )
 }

@@ -43,7 +43,6 @@ const Slider = () => {
           <div className="right-t">
             <h2>{bannerData[Selected].h2}</h2>
             <p>{bannerData[Selected].p}</p>
-          <button>Buy NoW</button>
           </div>
           </div>
           {/* rightarrow div */}

@@ -3,6 +3,8 @@ body {
   padding: 0;
   background-color: white;
   font-family: monospace;
+  box-sizing: border-box;
+
 }
 
 body::-webkit-scrollbar {

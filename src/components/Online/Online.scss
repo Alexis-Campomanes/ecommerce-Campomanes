@@ -1,0 +1,38 @@
+.Online{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .MuiAvatar-root{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .o-block{
+        position: absolute;
+        background-color: #d2d2d2;
+
+        z-index: 2;
+        top: 3rem;
+        right: 2rem;
+        border-radius: 20px;
+    }
+    .o-option{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: fit-content;
+        gap: 1rem;
+        strong{
+            color: var(--main-color);
+        }
+        button{
+            border: none;
+            padding: 0.5rem 0rem;
+            background-color: var(--main-color);
+            color: var(--white);
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

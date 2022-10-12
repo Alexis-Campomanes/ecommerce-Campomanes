@@ -59,6 +59,7 @@ const ItemDetail = ({item}) => {
               {/* contador */}
             </div>
             {isInCart(item.id)  && <p>item was added to the cart</p>}
+            
             {
                 isInCart(item.id)
                 ?<Link to='/cart'>
