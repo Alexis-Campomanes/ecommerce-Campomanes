@@ -31,3 +31,5 @@ En la siguiente imagen puede observar la primera vista del sitio web.</p>
 <p>Pasamos a la sección de lista de productos del carrito donde nos arroja datos del total productos y cantidas a pagar, en esta seccion tambien podemos quitar total o parcial los productos</p>
 
 ![](https://i.postimg.cc/Sj0v0gt7/Whats-App-Image-2022-10-14-at-11-13-29-AM.jpg)
+
+<p>luego pasamos al checkout dando fin a la compra</p>
