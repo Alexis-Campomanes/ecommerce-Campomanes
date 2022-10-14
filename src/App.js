@@ -8,20 +8,21 @@ import { CartContext } from './components/CartContext/CartContext';
 import { useState } from 'react';
 import Cart from '../src/components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
-import Login from '../../ecommerce2/src/complements/Login';
+import Login from '../src/complements/Login';
 
 
 
 function App() {
 
   const [cart, setCart] = useState([]);
+ 
 
   const addToCart = (item) => {
     setCart([...cart, item])
-  };
+  }
 
   const isInCart = (id) => {
-    return cart.find(item => item.id === id)
+    return cart.some((item) => item.id === id)
   }
 
   const cartQuantity = () =>{
@@ -43,7 +44,7 @@ function App() {
   const subTotal = () => {
     return cartTotal() - itemIgv()
   }
-
+  
 
   return (
   <CartContext.Provider value={{
@@ -69,7 +70,6 @@ function App() {
                 <Route path='/checkout' element={<Checkout />} />
                 <Route path= '/login' element= {<Login />} />
                 <Route path='*' element ={<Navigate to = '/' />} />
-
               </Route>
 
           </Routes>

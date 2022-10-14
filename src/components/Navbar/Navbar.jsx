@@ -15,12 +15,7 @@ const auth = getAuth(app);
 
 const Navbar = () => {
 
-
-
   const [usuario, setUsuario] = useState(null);
-
-  
-
 
 
   onAuthStateChanged(auth, (userFirebase) => {

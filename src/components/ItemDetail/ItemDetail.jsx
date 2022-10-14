@@ -27,7 +27,6 @@ const ItemDetail = ({item}) => {
     isInCart(item.id)
     addToCart(itemToCart)
   }
-
   return (
     <div className='products-conteiner'>
       <div className='products-left'>
@@ -58,19 +57,18 @@ const ItemDetail = ({item}) => {
               <span style={{fontSize:'20pt', fontWeight:'bold'}}>{item.stock}</span>
               {/* contador */}
             </div>
-            {isInCart(item.id)  && <p>item was added to the cart</p>}
-            
+            {isInCart(item.id) && <p>item was added to the cart</p>}
+
             {
                 isInCart(item.id)
                 ?<Link to='/cart'>
                   <button className='button'>Finish</button>
                 </Link>
                 :<Counter
-                    stock={item.stock} 
-                    contador = {cantidad}
-                    setContador = {setCantidad}
-                    handleAdd = {handleAdd}
-                  
+                    stock ={ item.stock } 
+                    contador = { cantidad }
+                    setContador = { setCantidad }
+                    handleAdd = { handleAdd }
                 />
             }
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+
 import './Footer.scss';
 import github from '../../Assets/github.png';
 import linkedin from '../../Assets/linkedin.png';
@@ -17,18 +17,7 @@ function Footer() {
     email: ''
   }
 
-  const [userEmail, setUserEmail] = useState(initialEmail);
 
-  const handleSubmit = async(values) =>{
-    try{
-      await addDoc(collection(db, 'usuarios'),{
-        userEmail
-      })
-    } catch (error) {
-      console.log(error)
-    }
-    setUserEmail({...initialEmail})
-  }
   return (
     <div className='footer'>  
         <span>Subscribe to get the latest on sales, new releases and more</span>
@@ -36,7 +25,7 @@ function Footer() {
             initialValues={initialEmail}
           >
 
-        <Form className='f-form'onSubmit={handleSubmit}>
+        <Form className='f-form'>
             <Field id='email' 
                   name='email'
                   type='email'

@@ -10,10 +10,6 @@ const auth = getAuth(app)
 
 const Online = ({correoUsuario}) => {
 
-  const valorInicial = {
-    
-  }
-
   const handleLogin = () => {
   setLoginUsuario(!loginUsuario)
   }
