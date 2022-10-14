@@ -32,4 +32,6 @@ En la siguiente imagen puede observar la primera vista del sitio web.</p>
 
 ![](https://i.postimg.cc/Sj0v0gt7/Whats-App-Image-2022-10-14-at-11-13-29-AM.jpg)
 
-<p>luego pasamos al checkout dando fin a la compra</p>
+<p>luego pasamos al checkout dando fin a la compra y toma de datos del comprador hasta llegar a finalizar la comprar</p>
+
+![](https://i.postimg.cc/tRv6wF6w/Screenshot-12.jpg)
