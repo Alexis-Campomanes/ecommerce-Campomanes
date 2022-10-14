@@ -1,6 +1,8 @@
 import React from 'react';
 import './Checkout.scss';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 const Checkout = () => {
@@ -62,7 +64,9 @@ const Checkout = () => {
                   values={values.addres}
                   type="text" 
                   placeholder='Address' />
-              <button type='submit'>Payment</button>
+              <Link to= '/check'>
+                <button type='submit'>Payment</button>
+              </Link>
             </form>
         </div>
     );

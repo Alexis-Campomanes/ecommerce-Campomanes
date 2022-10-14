@@ -9,6 +9,8 @@ import { useState } from 'react';
 import Cart from '../src/components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Login from '../src/complements/Login';
+import Check from './components/Check/Check'
+
 
 
 
@@ -62,14 +64,15 @@ function App() {
 
           <Routes>
 
-              <Route path='/' element = {<Layout />}>
-                <Route index element={<Home />} />
-                <Route path='/product/:categoryId' element = {<Products/>} />
-                <Route path='/item/:itemId' element = {<ProductsCart />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/checkout' element={<Checkout />} />
-                <Route path= '/login' element= {<Login />} />
-                <Route path='*' element ={<Navigate to = '/' />} />
+              <Route path='/' element = { <Layout />}>
+                <Route index element={ <Home /> } />
+                <Route path='/product/:categoryId' element = { <Products/>} />
+                <Route path='/item/:itemId' element = { <ProductsCart />} />
+                <Route path='/cart' element={ <Cart /> } />
+                <Route path='/checkout' element={ <Checkout />} />
+                <Route path= '/login' element= { <Login /> } />
+                <Route path= '/finish' element= { <Check /> } />
+                <Route path='*' element ={ <Navigate to = '/' /> } />
               </Route>
 
           </Routes>
